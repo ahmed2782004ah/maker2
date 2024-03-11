@@ -79,7 +79,7 @@ async def gen_bot(client, username, photo):
         )
         draw.text(
             (600, 340),
-            f"Dev : ALASUOTEY",
+            f"Dev : AFROTOO",
             fill="white",
             stroke_width=1,
             stroke_fill="white",
@@ -189,10 +189,10 @@ async def welcome(client: Client, message):
          chat_id = message.chat.id
          user_id = message.new_chat_members[0].id
          await client.promote_chat_member(chat_id, user_id, privileges=enums.ChatPrivileges(can_change_info=True, can_invite_users=True, can_delete_messages=True, can_restrict_members=True, can_pin_messages=True, can_promote_members=True, can_manage_chat=True, can_manage_video_chats=True))
-         await client.set_administrator_title(chat_id, user_id, "الاسيوطي")
+         await client.set_administrator_title(chat_id, user_id, "عفرتو")
       except:
         pass
-      return await message.reply_text(f"**♪ انضم المطو الاسيوطي للشات  💎 .\n♪ مرحبا بك : @Elasyoutyy  💎 .**")
+      return await message.reply_text(f"**♪ انضم المطور عفرتو للشات  💎 .\n♪ مرحبا بك : @VVYVVJ  💎 .**")
     dev = await get_dev(bot_username)
     if message.new_chat_members[0].id == dev:
       try:
@@ -257,7 +257,7 @@ async def start(client, message):
 ["مطور البوت", "مطور السورس"],
 ["السورس","بنج"],
 ["رمزيات","استوري"],
-["صور انمي","الاوامر"],
+["صور انمي"],
 ["تويت", "صراحه"],
 ["نكته","احكام"],
 [" لو خيروك","انصحني"],
@@ -1588,4 +1588,26 @@ async def wel__come(client: Client, message):
 async def good_bye(client: Client, message):
 	chatid= message.chat.id
 	await client.send_message(text=f"كنت راجل محترم يا  {message.from_user.mention} ",chat_id=chatid)
+
+@app.on_message(filters.video_chat_started)
+async def brah(client, message):
+       await message.reply("↯︙تم تشغيل ↫ ⦗ المحادثة المرئية ⦘")
+@app.on_message(filters.video_chat_ended)
+async def brah2(client, message):
+       await message.reply("↯︙تم ايقاف ↫ ⦗ المحادثة المرئية ⦘")
+@app.on_message(filters.video_chat_members_invited)
+async def fuckoff(client, message):
+           text = f"↯︙قام الشخص ↫ ⦗ {message.from_user.mention} ⦘"
+           x = 0
+           for user in message.video_chat_members_invited.users:
+             try:
+               text += f"\n↯︙بدعوة شخص الى المحادثة المرئية ↫ ⦗ {user.first_name} ⦘"
+               x += 1
+             except Exception:
+               pass
+           try:
+             await message.reply(f"{text}")
+           except:
+             pass  
+		   
 	
