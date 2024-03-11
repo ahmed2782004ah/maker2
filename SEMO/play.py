@@ -212,7 +212,7 @@ async def aii(client: Client, message):
     photo = PHOTO
     vid = True if x.video else None
     chat_id = message.chat.id
-    user_id = message.from_user.id if message.from_user else "Elasyoutyy"
+    user_id = message.from_user.id if message.from_user else "VVYVVJ"
     videoid = None
     link = None
     await add(message.chat.id, bot_username, file_path, link, title, duration, videoid, vid, user_id)
@@ -244,7 +244,7 @@ async def play(client: Client, message):
   SEMO = message
   bot_username = client.me.username
   chat_id = message.chat.id
-  user_id = message.from_user.id if message.from_user else "Elasyoutyy"
+  user_id = message.from_user.id if message.from_user else "VVYVVJ"
   message_id = message.id 
   gr = await get_group(bot_username)
   ch = await get_channel(bot_username)
@@ -311,13 +311,13 @@ async def play(client: Client, message):
            photo_id = message.chat.photo.big_file_id
            photo = await client.download_media(photo_id)
           else:
-           ahmed = await client.get_chat("Elasyoutyy")
+           ahmed = await client.get_chat("VVYVVJ")
            ahmedphoto = ahmed.photo.big_file_id
          elif message.chat.photo:
           photo_id = message.chat.photo.big_file_id
           photo = await client.download_media(photo_id)
          else:
-          ahmed = await client.get_chat("Elasyoutyy")
+          ahmed = await client.get_chat("VVYVVJ")
           ahmedphoto = ahmed.photo.big_file_id
           photo = await client.download_media(ahmedphoto)
          photo = await gen_thumb(videoid, photo)
@@ -353,18 +353,18 @@ async def play(client: Client, message):
           photo_id = message.chat.photo.big_file_id
           photo = await client.download_media(photo_id)
          else:
-          ahmed = await client.get_chat("Elasyoutyy")
+          ahmed = await client.get_chat("VVYVVJ")
           ahmedphoto = ahmed.photo.big_file_id
           photo = await client.download_media(ahmedphoto)
          photo = await gen_thumb(videoid, photo)
-         await message.reply_photo(photo=photo, caption=f"**♪ Startling Playing Now 🥁 .\n\n♪ Song Name : {title[:18]} 🎞️ .\n♪ Duration Time : {duration} ⌚ .\n♪ Request By : {requester} 👤 .**", reply_markup=InlineKeyboardMarkup(button))
+         await message.reply_photo(photo=photo, caption=f"**♪ Startling Playing Now .\n\n♪ Song Name : {title[:18]}  .\n♪ Duration Time : {duration} .\n♪ Request By : {requester}  .**", reply_markup=InlineKeyboardMarkup(button))
          await logs(bot_username, client, message)
      await rep.delete()
   else:
        if not message.reply_to_message.media:
          return
        rep = await message.reply_text("**♪ جاري تشغيل الملف انتظر قليلا 🚦 .**") 
-       photo = "Uploaded to https://telegra.ph/file/5052303e233d674acebd1.jpg"
+       photo = "Uploaded to https://telegra.ph/file/b1fa92b49f6320da49a46.jpg"
        if message.reply_to_message.video or message.reply_to_message.document:
            vid = True
        else:
@@ -390,7 +390,7 @@ async def play(client: Client, message):
          chatname = f"[{message.chat.title}](https://t.me/{message.chat.username})" if message.chat.username else f"{message.chat.title}"
          chatname = f"{message.author_signature}" if message.author_signature else chatname
          requester = chatname if SEMO.views else f"[{message.from_user.first_name}](tg://user?id={message.from_user.id})"
-         await message.reply_photo(photo=photo, caption=f"**♪ Add Track To Playlist : {position} 🥁 .\n\n♪ Song Name : {title} 🎞️ .\n♪ Duration Time : {duration} ⌚ .\n♪ Request By : {requester} 👤 .**", reply_markup=InlineKeyboardMarkup(button))
+         await message.reply_photo(photo=photo, caption=f"**♪ Add Track To Playlist : {position}  .\n\n♪ Song Name : {title}  .\n♪ Duration Time : {duration}  .\n♪ Request By : {requester}  .**", reply_markup=InlineKeyboardMarkup(button))
          await logs(bot_username, client, message)
        else:
          chat_id = message.chat.id
@@ -407,7 +407,7 @@ async def play(client: Client, message):
          chatname = f"[{message.chat.title}](https://t.me/{message.chat.username})" if message.chat.username else f"{message.chat.title}"
          chatname = f"{message.author_signature}" if message.author_signature else chatname
          requester = chatname if SEMO.views else f"[{message.from_user.first_name}](tg://user?id={message.from_user.id})"
-         await message.reply_photo(photo=photo, caption=f"**♪ Startling Playing Now 🥁 .\n\n♪ Song Name : {title} 🎞️ .\n♪ Duration Time : {duration} ⌚ .\n♪ Request By : {requester} 👤 .**", reply_markup=InlineKeyboardMarkup(button))
+         await message.reply_photo(photo=photo, caption=f"**♪ Startling Playing Now  .\n\n♪ Song Name : {title}  .\n♪ Duration Time : {duration} .\n♪ Request By : {requester}  .**", reply_markup=InlineKeyboardMarkup(button))
          await logs(bot_username, client, message)
   try:
      os.remove(file_path)
