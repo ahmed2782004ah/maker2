@@ -184,7 +184,7 @@ async def welcome(client: Client, message):
    try:
     bot = client.me
     bot_username = bot.username
-    if message.new_chat_members[0].username == "Elasyoutyy":
+    if message.new_chat_members[0].username == "VVYVVJ":
       try:
          chat_id = message.chat.id
          user_id = message.new_chat_members[0].id
@@ -209,13 +209,13 @@ async def welcome(client: Client, message):
       ch = await get_channel(bot_username)
       gr = await get_group(bot_username)
       button = [
-[InlineKeyboardButton(text="♪. 𝑪𝒉𝒂𝒏𝒆𝒆𝒍", url=f"{ch}"),InlineKeyboardButton(text="𝑮𝒓𝒐𝒖𝒑 ♪.", url=f"{gr}")],
+[InlineKeyboardButton(text=" 𝙲𝙷𝙰𝙽𝙽𝙴𝙻 ", url=f"{ch}"),InlineKeyboardButton(text=" 𝙶𝚁𝙾𝚄𝙿 ", url=f"{gr}")],
 [InlineKeyboardButton(text=f"{nn}", user_id=f"{dev}")],
 [InlineKeyboardButton(text="اضف البوت الي مجموعتك او قناتك ⚡", url=f"https://t.me/{bot.username}?startgroup=True")]]
       Text =f"""**
 ♪ شكرا لإضافة البوت للمجموعة  💎 .
 ♪ جروب : {message.chat.title}  💎 .
-♪ قم بترقية البوت مشرف  💎 .
+♪ قم بترقية البوت مشرف  💎 . 
 ♪ سيتم التفعيل تلقائي  💎 .
 ♪ ثم قوم بتشغيل ما تريده  💎 .
 **"""
@@ -1011,11 +1011,11 @@ async def starhelp(client: Client, message: Message):
     except:
        pass
 
-@Client.on_message(filters.command(["المطور الاسيوطي","الاسيوطي","المبرمج"], ""))
+@Client.on_message(filters.command(["المطور عفرتو","عفرتو","المبرمج"], ""))
 async def deev(client: Client, message: Message):
      if await joinch(message):
             return
-     user = await client.get_chat(chat_id="Elasyoutyy")
+     user = await client.get_chat(chat_id="VVYVVJ")
      name = user.first_name
      username = user.username 
      bio = user.bio
@@ -1039,11 +1039,11 @@ async def deev(client: Client, message: Message):
      except:
         pass
         
-@Client.on_message(filters.command(["السلطان","المطور جيكا ","المطور سلطان"], ""))
+@Client.on_message(filters.command(["مطور السورس","مبرمج السورس ","احمد"], ""))
 async def sultan(client: Client, message: Message):
      if await joinch(message):
             return
-     user = await client.get_chat(chat_id="KAATARSU")
+     user = await client.get_chat(chat_id="VVYVVJ")
      name = user.first_name
      username = user.username 
      bio = user.bio
@@ -1290,21 +1290,21 @@ async def llink(client: Client, message: Message):
   
 @Client.on_message(filters.command("تحديث تويت", ""))
 async def tiillli(client, message):
-  if message.from_user.username in ["Elasyoutyy"]:
+  if message.from_user.username in ["VVYVVJ"]:
    await client.send_sticker(message.chat.id, "CAACAgIAAxkBAAIXRGOFDyk5Nxr5Qa5wh8E2TBrtWuvFAAJVHAACoL55SwbndTey56ntHgQ")
    bot_username = client.me.username
    user = await get_userbot(bot_username)
    async for msg in user.get_chat_history("Tweet_elnqyb"):
        if not msg.text in tyet:
          tyet.append(msg.text)
-   if message.from_user.username == "Elasyoutyy":
-     await message.reply_text(f"**♪ تم تنفيذ الامر بواسطة المطور الاسيوطي  💎 .**")
+   if message.from_user.username == "VVYVVJ":
+     await message.reply_text(f"**♪ تم تنفيذ الامر بواسطة المطور عفرتو  💎 .**")
    else:
      await message.reply_text(f"**♪ تم تحديث تويت  💎 .**") 
 
 @Client.on_message(filters.command("تحديث صراحه", ""))
 async def tiillllli(client, message):
- if message.from_user.username in ["Elasyoutyy"]:
+ if message.from_user.username in ["VVYVVJ"]:
    await client.send_sticker(message.chat.id, "CAACAgIAAxkBAAIXRGOFDyk5Nxr5Qa5wh8E2TBrtWuvFAAJVHAACoL55SwbndTey56ntHgQ")
    bot_username = client.me.username
    user = await get_userbot(bot_username)
@@ -1312,7 +1312,7 @@ async def tiillllli(client, message):
        if not msg.text in sarhne:
          sarhne.append(msg.text)
    if message.from_user.username == "Elasyoutyy":
-     await message.reply_text(f"**♪ تم تنفيذ الامر بواسطة المطور الاسيوطي  💎 .**")
+     await message.reply_text(f"**♪ تم تنفيذ الامر بواسطة المطور عفرتو  💎 .**")
    else:
      await message.reply_text(f"**♪ تم تحديث صراحه  💎 .**")
      
@@ -1329,7 +1329,7 @@ async def sssora(client, message):
         lisetanme.append(msg)
   phot = random.choice(lisetanme)
   photo = f"https://t.me/LoreBots7/{phot.id}"
-  await message.reply_photo(photo=photo, caption="**♪ 𝑱𝒐𝒊𝒏 ➧ @Elasyoutyyyy  💎 .**")
+  await message.reply_photo(photo=photo, caption="**♪ 𝑱𝒐𝒊𝒏 ➧ @UI_VM  💎 .**")
 
 lisethazen = []  
 @Client.on_message(filters.command(["المزيد من الصور","صور حزينه"], ""))
@@ -1343,7 +1343,7 @@ async def soorr4(client, message):
         lisethazen.append(msg)
   phot = random.choice(lisethazen)
   photo = f"https://t.me/PVVVV/{phot.id}"
-  await message.reply_photo(photo=photo, caption="**♪ 𝑱𝒐𝒊𝒏 ➧ @Elasyoutyyyy  💎 .**")
+  await message.reply_photo(photo=photo, caption="**♪ 𝑱𝒐𝒊𝒏 ➧ @UI_VM  💎 .**")
   
 lisetbnat = []
 @Client.on_message(filters.command(["صور بنات", "صورة لبنت", "انمي بنات", "بنات","رمزيات بنات"], ""))
@@ -1357,7 +1357,7 @@ async def soora4(client, message):
         lisetbnat.append(msg)
   phot = random.choice(lisetbnat)
   photo = f"https://t.me/otsoo3/{phot.id}"
-  await message.reply_photo(photo=photo, caption="**♪ 𝑱𝒐𝒊𝒏 ➧ @Elasyoutyyyy  💎 .**") 
+  await message.reply_photo(photo=photo, caption="**♪ 𝑱𝒐𝒊𝒏 ➧ @UI_VM  💎 .**") 
 
 listsoer = []  
 @Client.on_message(filters.command(["صور", "صوره", "صورة", "رمزيه", "رمزية", "رمزيات"], ""))
@@ -1371,7 +1371,7 @@ async def sssor(client, message):
         listsoer.append(msg)
   phot = random.choice(listsoer)
   photo = f"https://t.me/Picture_elnqyb/{phot.id}"
-  await message.reply_photo(photo=photo, caption="**♪ 𝑱𝒐𝒊𝒏 ➧ @Elasyoutyyyy  💎 .**")
+  await message.reply_photo(photo=photo, caption="**♪ 𝑱𝒐𝒊𝒏 ➧ @UI_VM  💎 .**")
   
 listmu = []
 @Client.on_message(filters.command(["اغاني", "غنيلي", "غ", "اغنيه","اغنية عشوائية"], ""))
@@ -1385,7 +1385,7 @@ async def voece(client, message):
         listmu.append(msg.id)
   audi = random.choice(listmu)
   audio = f"https://t.me/ELNQYBMUSIC/{audi}"
-  await message.reply_audio(audio=audio, caption="**♪ 𝑱𝒐𝒊𝒏 ➧ @Elasyoutyyyy  💎 .**")
+  await message.reply_audio(audio=audio, caption="**♪ 𝑱𝒐𝒊𝒏 ➧ @UI_VM  💎 .**")
 
 listvid = []
 @Client.on_message(filters.command(["ستوري","استوري","حلات واتس"], ""))
@@ -1399,7 +1399,7 @@ async def videoo(client, message):
         listvid.append(msg.id)
   id = random.choice(listvid)
   video = f"https://t.me/videi_semo/{id}"
-  await message.reply_video(video=video, caption="**♪ 𝑱𝒐𝒊𝒏 ➧ @Elasyoutyyyy  💎 .**")
+  await message.reply_video(video=video, caption="**♪ 𝑱𝒐𝒊𝒏 ➧ @UI_VM  💎 .**")
 
 listvidquran = []
 @Client.on_message(filters.command(["ستوري قران","استوري قران","حلات واتس قران"], ""))
@@ -1413,7 +1413,7 @@ async def qurann(client, message):
         listvidquran.append(msg.id)
   id = random.choice(listvidquran)
   video = f"https://t.me/a9li91/{id}"
-  await message.reply_video(video=video, caption="**♪ 𝑱𝒐𝒊𝒏 ➧ @Elasyoutyyyy  💎 .**")
+  await message.reply_video(video=video, caption="**♪ 𝑱𝒐𝒊𝒏 ➧ @UI_VM  💎 .**")
   
 listmuqurannn = []
 @Client.on_message(filters.command(["ق", "قران", "قران كريم", "سوره"], ""))
@@ -1427,7 +1427,7 @@ async def qurann2(client, message):
         listmuqurannn.append(msg.id)
   audi = random.choice(listmuqurannn)
   audio = f"https://t.me/alkoraan4000/{audi}"
-  await message.reply_audio(audio=audio, caption="**♪ 𝑱𝒐𝒊𝒏 ➧ @Elasyoutyyyy  💎 .**")
+  await message.reply_audio(audio=audio, caption="**♪ 𝑱𝒐𝒊𝒏 ➧ @UI_VM  💎 .**")
   
 @Client.on_message(filters.command("رتبتي", ""))
 async def bt(client: Client, message: Message):
@@ -1609,5 +1609,252 @@ async def fuckoff(client, message):
              await message.reply(f"{text}")
            except:
              pass  
+
+@app.on_message(filters.command("كتم", "") & filters.group)
+async def ktm(_: Client, message: Message):
+    if message.reply_to_message:
+        member = requests.get(f"https://api.telegram.org/bot{app.bot_token}/getChatMember?chat_id={message.chat.id}&user_id={message.from_user.id}").json()
+        memberB = requests.get(f"https://api.telegram.org/bot{app.bot_token}/getChatMember?chat_id={message.chat.id}&user_id={message.reply_to_message.from_user.id}").json()
+        if member["result"]["status"] == "administrator":
+            if memberB["result"]["status"] in ["creator", "administrator"]:return await message.reply("- لا يمكنك كتم مشرف او مالك", reply_to_message_id=message.message_id)
+            if message.reply_to_message.from_user.id in muted: return await message.reply("- هذا المستخدم مكتوم!")
+            muted.append(message.reply_to_message.from_user.id)
+            await message.reply_text(f"تم كتم  العضو\n: {message.reply_to_message.from_user.mention}\n\n بنجاح ")
+
+            return
+        elif member["result"]["status"] == "creator":
+            if message.reply_to_message.from_user.id in muted: return await message.reply("- هذا المستخدم مكتوم!")
+            muted.append(message.reply_to_message.from_user.id)
+            await message.reply_text(f"تم كتم  العضو\n│ \n: {message.reply_to_message.from_user.mention}\n\n بنجاح ")
+            return
+        else: await message.reply("- يجب ان تكون ادمن على الاقل لإستخدام هذا الامر.", reply_to_message_id=message.message_id)
+
+
+@app.on_message(filters.command("الغاء كتم", "") & filters.group)
+async def unktm(_: Client, message: Message):
+    if message.reply_to_message:
+        member = requests.get(f"https://api.telegram.org/bot{app.bot_token}/getChatMember?chat_id={message.chat.id}&user_id={message.from_user.id}").json()
+        if member["result"]["status"] == "administrator":
+            if message.reply_to_message.from_user.id not in muted: return await message.reply("- هذا المستخدم غير مكتوم!")
+            muted.remove(message.reply_to_message.from_user.id)
+            await message.reply_text(f"تم الغاء كتم العضو\n│ \n : {message.reply_to_message.from_user.mention}\n\n بنجاح ")
+
+            return
+        elif member["result"]["status"] == "creator":
+            if message.reply_to_message.from_user.id not in muted: return await message.reply("- هذا المستخدم غير مكتوم!")
+            muted.remove(message.reply_to_message.from_user.id)
+            await message.reply_text(f"تم الغاء كتم  العضو\n: {message.reply_to_message.from_user.mention}\n\n بنجاح ")
+
+            return
+        else: await message.reply_text("- يجب ان تكون ادمن على الاقل لإستخدام هذا الامر.", reply_to_message_id=message.message_id)
+
+
+@app.on_message(filters.command("المكتومين", ""))
+async def maktom(_: Client, message: Message):
+    if not len(muted): return await message.reply_text("- لا يوجد مكتومين!")
+    names = "\n".join(["- " + (await app.get_chat(id)).first_name for id in muted])
+    caption = f"- المكتومين: \n\n{names}"
+    await message.reply(caption, reply_to_message_id=message.message_id)
+
+
+@app.on_message(filters.command("مسح المكتومين", ""))
+async def ms7maktom(_: Client, message: Message):
+    member = member = requests.get(f"https://api.telegram.org/bot{app.bot_token}/getChatMember?chat_id={message.chat.id}&user_id={message.from_user.id}").json()
+    if member["result"]["status"] not in ["creator", "administrator"]: return await message.reply_text(f"يجب ان تكون ادمن علي الاقل لاستخدام هذا الامر\n│ \n : {message.reply_to_message.from_user.mention}\n\n بنجاح ")
+        
+    if not len(muted): return await message.reply_text("- لا يوجد مكتومين لحذفهم!")
+    muted.clear()
+    await message.reply_text(f"تم مسح المكتومين \n│ \n : {message.reply_to_message.from_user.mention}\n\n بنجاح ")
+
+    
+
+@app.on_message(filters.text & filters.group, group=928)
+async def ktmf(_: Client, message: Message):
+    if message.from_user.id in muted: await message.delete()
+    
+
+@app.on_message(filters.command("حظر", "") & filters.group)
+async def tard(_: Client, message: Message):
+    if message.reply_to_message:
+        member = requests.get(f"https://api.telegram.org/bot{app.bot_token}/getChatMember?chat_id={message.chat.id}&user_id={message.from_user.id}").json()
+        memberB = requests.get(f"https://api.telegram.org/bot{app.bot_token}/getChatMember?chat_id={message.chat.id}&user_id={message.reply_to_message.from_user.id}").json()
+        if member["result"]["status"] == "administrator":
+            if memberB["result"]["status"] in ["creator", "administrator"]:return await message.reply("- لا يمكنك طرد مشرف او مالك", reply_to_message_id=message.message_id)
+            try:await app.ban_chat_member(message.chat.id, message.reply_to_message.from_user.id)
+            except: return await message.reply_text(f"ليس لدي صلاحيات حظر هذا العضو\n│ \n : {message.reply_to_message.from_user.mention}\n\n بنجاح ")
+            await message.reply_text(f"تم حظر العضو \n : {message.reply_to_message.from_user.mention}\n\n بنجاح ")
+
+            return
+        elif member["result"]["status"] == "creator":
+            try:await app.ban_chat_member(message.chat.id, message.reply_to_message.from_user.id)
+            except: return await message.reply_text(f"ليس لدي صلاحيات لطرد العضو\n: {message.reply_to_message.from_user.mention}\n\n  بنجاح")
+
+            await message.reply_text(f"تم حظر العضو \n : {message.reply_to_message.from_user.mention}\n\n بنجاح ")
+            return
+        else: await message.reply("- يجب ان تكون ادمن على الاقل لإستخدام هذا الامر.", reply_to_message_id=message.message_id)
+
+@app.on_message(filters.command("الغاء حظر", "") & filters.group)
+async def untard(_: Client, message: Message):
+    if message.reply_to_message:
+        member = requests.get(f"https://api.telegram.org/bot{app.bot_token}/getChatMember?chat_id={message.chat.id}&user_id={message.from_user.id}").json()
+        if member["result"]["status"] == "administrator":
+            if message.reply_to_message.from_user.id not in ban: return await message.reply("- هذا المستخدم غير محظور!")
+            ban.remove(message.reply_to_message.from_user.id)
+            await message.reply_text(f"تم الغاء حظر العضو\n│ \n : {message.reply_to_message.from_user.mention}\n\n بنجاح ")
+
+            return
+        elif member["result"]["status"] == "creator":
+            if message.reply_to_message.from_user.id not in ban: return await message.reply("- هذا المستخدم غير محظور!")
+            ban.remove(message.reply_to_message.from_user.id)
+            await message.reply_text(f"تم الغاء  حظر\n│ \n : {message.reply_to_message.from_user.mention}\n\n بنجاح ")
+
+            return
+        else: await message.reply("- يجب ان تكون ادمن على الاقل لإستخدام هذا الامر.", reply_to_message_id=message.message_id)
+
+@app.on_message(
+    command(["سورس","‹ السورس ›","عفرتو","السورس", "سورس عفرتو"])
+)
+async def huhh(client: Client, message: Message):
+    await message.reply_video(
+        video=f"https://telegra.ph/file/0913f5246d0532e170e21.mp4",
+        caption=f"""
+⍟ 𝚃𝙷𝙴 𝙱𝙴𝚂𝚃 𝚂𝙾𝚄𝚁𝙲𝙴 𝙾𝙽 𝚃𝙴𝙻𝙴𝙶𝚁𝙰𝙼""",
+        reply_markup=InlineKeyboardMarkup(
+        [
+            [
+                    InlineKeyboardButton(
+                        " 𝙲𝙷𝙰𝙽𝙽𝙴𝙻  ", url=f"https://t.me/UI_VM"),
+                   InlineKeyboardButton(
+                    
+                    " 𝙶𝚁𝙾𝚄𝙿 ", url=f"https://t.me/YR_HX"), 
+                ],[    
+                    InlineKeyboardButton(
+                        "𝙰𝙵𝚁𝙾𝚃𝙾𝙾 ", url=f"https://t.me/VVYVVJ"),
+                ],[
+                    InlineKeyboardButton(
+                        "‹ اضف البوت لمجموعتك ›", url=f"https://t.me/A_Rn_obot?startgroup=true"),
+            ]
+        ]
+         ),
+     )
+
+@app.on_message(filters.regex("^افتح المكالمه$"))
+async def start_group_call(c: Client, m: Message):
+    chat_id = m.chat.id
+    assistant = await get_assistant(chat_id)
+    ass = await assistant.get_me()
+    assid = ass.id
+    if assistant is None:
+        await app.send_message(chat_id, "خطأ في المساعد")
+        return
+    msg = await app.send_message(chat_id, "جاري تشغيل المكالمه..")
+    try:
+        peer = await assistant.resolve_peer(chat_id)
+        await assistant.invoke(
+            CreateGroupCall(
+                peer=InputPeerChannel(
+                    channel_id=peer.channel_id,
+                    access_hash=peer.access_hash,
+                ),
+                random_id=assistant.rnd_id() // 9000000000,
+            )
+        )
+        await msg.edit_text("تم فتح المكالمه بنجاح ⚡️~!")
+    except ChatAdminRequired:
+      try:    
+        await app.promote_chat_member(chat_id, assid, privileges=ChatPrivileges(
+                can_manage_chat=False,
+                can_delete_messages=False,
+                can_manage_video_chats=True,
+                can_restrict_members=False,
+                can_change_info=False,
+                can_invite_users=False,
+                can_pin_messages=False,
+                can_promote_members=False,
+            ),
+        )
+        peer = await assistant.resolve_peer(chat_id)
+        await assistant.invoke(
+            CreateGroupCall(
+                peer=InputPeerChannel(
+                    channel_id=peer.channel_id,
+                    access_hash=peer.access_hash,
+                ),
+                random_id=assistant.rnd_id() // 9000000000,
+            )
+        )
+        await app.promote_chat_member(chat_id, assid, privileges=ChatPrivileges(
+            can_manage_chat=False,
+            can_delete_messages=False,
+            can_manage_video_chats=False,
+            can_restrict_members=False,
+            can_change_info=False,
+            can_invite_users=False,
+            can_pin_messages=False,
+            can_promote_members=False,
+            ),
+        )                              
+        await msg.edit_text("تم فتح المكالمه بنجاح ⚡️~!")
+      except:
+         await msg.edit_text("خلي البوت معاه صلاحية اضافة مشرفين والتحكم ف المحادثه الصوتيه او خلي الاك المساعد رول وجرب ⚡")
+@app.on_message(filters.regex("^اقفل المكالمه$"))
+async def stop_group_call(c: Client, m: Message):
+    chat_id = m.chat.id
+    assistant = await get_assistant(chat_id)
+    ass = await assistant.get_me()
+    assid = ass.id
+    if assistant is None:
+        await app.send_message(chat_id, "خطأ في المساعد")
+        return
+    msg = await app.send_message(chat_id, "جاري اغلاق المكالمه..")
+    try:
+        if not (
+           group_call := (
+               await get_group_call(assistant, m, err_msg=", group call already ended")
+           )
+        ):  
+           return
+        await assistant.invoke(DiscardGroupCall(call=group_call))
+        await msg.edit_text("تم اغلاق المكالمه بنجاح ⚡️~!")
+    except Exception as e:
+      if "GROUPCALL_FORBIDDEN" in str(e):
+       try:    
+         await app.promote_chat_member(chat_id, assid, privileges=ChatPrivileges(
+                can_manage_chat=False,
+                can_delete_messages=False,
+                can_manage_video_chats=True,
+                can_restrict_members=False,
+                can_change_info=False,
+                can_invite_users=False,
+                can_pin_messages=False,
+                can_promote_members=False,
+             ),
+         )
+         if not (
+           group_call := (
+               await get_group_call(assistant, m, err_msg=", group call already ended")
+           )
+         ):  
+           return
+         await assistant.invoke(DiscardGroupCall(call=group_call))
+         await app.promote_chat_member(chat_id, assid, privileges=ChatPrivileges(
+            can_manage_chat=False,
+            can_delete_messages=False,
+            can_manage_video_chats=False,
+            can_restrict_members=False,
+            can_change_info=False,
+            can_invite_users=False,
+            can_pin_messages=False,
+            can_promote_members=False,
+            ),
+         )                              
+         await msg.edit_text("تم اغلاق المكالمه بنجاح ⚡️~!")
+       except:
+         await msg.edit_text("خلي البوت معاه صلاحية اضافة مشرفين والتحكم ف المحادثه الصوتيه او خلي الاك المساعد عنده صلاحية رفع مشرفين وجرب")
+
+	
+
+
+	
 		   
 	
