@@ -72,15 +72,15 @@ async def auto_bot():
         except:
            pass
         try:
-          await user.join_chat("SOURCE_ELNGOM")
+          await user.join_chat("UI_VM")
         except:
           pass
         try:
-          await user.join_chat("HLV_M")
+          await user.join_chat("UI_VM")
         except:
           pass
         try:
-          await user.join_chat("HLV_M")
+          await user.join_chat("T_Y_E_X")
         except:
           pass
       except Exception as e:
@@ -211,9 +211,9 @@ async def stratmaked(client, message):
     await message.reply_text(f"**♪ مرحبا عزيزي المطور الاساسي  🚦⚡ .**", reply_markup=kep,quote=True)
   else:
     kep = ReplyKeyboardMarkup([
-["حذف بوت", "صنع بوت"],
-["حول السورس", "استخراج جلسه"]],resize_keyboard=True)
-    await message.reply_text(f"**👋🏻 ꒐ أهلاً بك {message.from_user.mention}  🚦⚡ .\n🤖 ꒐ في صانع ميوزك كابوس  🚦⚡ .**", reply_markup=kep,quote=True)
+["استخراج جلسه"],
+["صنع بوت", "حذف بوت"]],resize_keyboard=True)
+    await message.reply_text(f"**👋🏻 ꒐ أهلاً بك {message.from_user.mention}   .\n في صانع ميوزك عفرتو  .**", reply_markup=kep,quote=True)
     
 @app.on_message(
     filters.command(["/alive", "معلومات", "سورس", "السورس", "• السورس •"], "")
