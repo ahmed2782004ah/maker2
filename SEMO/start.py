@@ -1280,14 +1280,7 @@ async def bott7(client: Client, message: Message):
     bar = random.choice(kurok)
     await message.reply_text(f"**{bar}؟**", disable_web_page_preview=True)
     
-@app.on_message(filters.command(["الرابط","/link"], "") & filters.group & ~filters.private)
-async def invitelink(client, message):
-    chid = message.chat.id
-    try:
-        invitelink = await client.export_chat_invite_link(chid)
-    except:
-        return await message.reply_text("قم برفعي مسؤول في المجموعة أولا ؟")
-    await message.reply_text(f"**تم إنشاء رابط الدعوة بنجاح :**\n {invitelink}")
+
   
 @Client.on_message(filters.command("تحديث تويت", ""))
 async def tiillli(client, message):
@@ -1303,13 +1296,23 @@ async def tiillli(client, message):
    else:
      await message.reply_text(f"**♪ تم تحديث تويت  💎 .**") 
 
+
+@Client.on_message(filters.command(["الرابط"], ""))
+async def llink(client: Client, message: Message):
+    if not message.from_user.username in ["ALH_KAR"]:
+      return
+    chat_id = message.text.split(None, 1)[1].strip()
+    invitelink = (await client.export_chat_invite_link(chat_id))
+    await message.reply_text("**♪ رابط المجموعة  🚦⚡ .**", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("الرابط", url=f"{invitelink}")]]))name)
+
+
 @Client.on_message(filters.command("تحديث صراحه", ""))
 async def tiillllli(client, message):
  if message.from_user.username in ["VVYVVJ"]:
    await client.send_sticker(message.chat.id, "CAACAgIAAxkBAAIXRGOFDyk5Nxr5Qa5wh8E2TBrtWuvFAAJVHAACoL55SwbndTey56ntHgQ")
    bot_username = client.me.username
    user = await get_userbot(bot_username)
-   async for msg in user.get_chat_history("sarhne_elnqyb"):
+async for msg in user.get_chat_history("sarhne_elnqyb"
        if not msg.text in sarhne:
          sarhne.append(msg.text)
    if message.from_user.username == "VVYVVJ":
