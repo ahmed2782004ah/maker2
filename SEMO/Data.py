@@ -135,7 +135,7 @@ async def set_channelsr(bot_username: dict, channelsr: str):
     CHANNELsr[bot_username] = channelsr
     channeldbsr.update_one({"bot_username": bot_username}, {"$set": {"channelsr": channelsr}}, upsert=True)
 
-@Client.on_message(filters.command("• تعين قناة البوت •", ""))
+@Client.on_message(filters.command(" تعين قناة البوت ", ""))
 async def set_botch(client: Client, message):
   if message.chat.username in OWNER:
    NAME = await client.ask(message.chat.id, "ارسل رابط القناه البوت الجديدة", filters=filters.text)
@@ -145,7 +145,7 @@ async def set_botch(client: Client, message):
    await message.reply_text("**تم تعين قناه البوت بنجاح -🖱️**")
    return
 
-@Client.on_message(filters.command("• تعين مجموعة البوت •", ""))
+@Client.on_message(filters.command(" تعين مجموعة البوت ", ""))
 async def set_botgr(client: Client, message):
   if message.chat.username in OWNER:
    NAME = await client.ask(message.chat.id, "ارسل رابط الجروب الجديد", filters=filters.text)
@@ -156,7 +156,7 @@ async def set_botgr(client: Client, message):
    return
 
 
-@Client.on_message(filters.command("• تعين قناة السورس •", ""))
+@Client.on_message(filters.command("تعين قناة السورس ", ""))
 async def set_botchsr(client: Client, message):
   if message.chat.username in OWNER:
    NAME = await client.ask(message.chat.id, "ارسل رابط القناه البوت الجديدة", filters=filters.text)
@@ -166,7 +166,7 @@ async def set_botchsr(client: Client, message):
    await message.reply_text("**تم تعين قناه السورس بنجاح -🖱️**")
    return
 
-@Client.on_message(filters.command("• تعين مجموعة السورس •", ""))
+@Client.on_message(filters.command(" تعين مجموعة السورس ", ""))
 async def set_botgrsr(client: Client, message):
   if message.chat.username in OWNER:
    NAME = await client.ask(message.chat.id, "ارسل رابط الجروب الجديد", filters=filters.text)
@@ -266,20 +266,20 @@ async def must_join(bot_username):
       return name
 
 async def set_must(bot_username: dict, m: str):
-    if m == "• تعطيل الاشتراك الإجباري •":
+    if m == " تعطيل الاشتراك الإجباري ":
       ii = "معطل"
     else:
       ii = "مفعل"
     must[bot_username] = ii
     mustdb.update_one({"bot_username": bot_username}, {"$set": {"getmust": ii}}, upsert=True)
 
-@Client.on_message(filters.command(["• تعطيل الاشتراك الإجباري •", "• تفعيل الاشتراك الإجباري •"], ""))
+@Client.on_message(filters.command([" تعطيل الاشتراك الإجباري "," تفعيل الاشتراك الإجباري "], ""))
 async def set_join_must(client: Client, message):
   if message.chat.username in OWNER:
    bot_username = client.me.username
    m = message.command[0]
    await set_must(bot_username, m)
-   if message.command[0] == "• تعطيل الاشتراك الإجباري •":
+   if message.command[0] == " تعطيل الاشتراك الإجباري ":
      await message.reply_text("**تم تعطيل الاشتراك الإجباري بنجاح -🖱️**")
    else:
      await message.reply_text("**تم تفعيل الاشتراك الإجباري بنجاح -🖱️**")
