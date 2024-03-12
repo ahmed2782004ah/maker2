@@ -280,7 +280,7 @@ async def start(client, message):
     username = client.me.username
     photo = await gen_bot(client, username, photo)
   button = [[InlineKeyboardButton(text="ᴇɴɢʟɪѕʜ 🇺🇲", callback_data=f"english"), InlineKeyboardButton(text="عربي 🇪🇬", callback_data=f"arbic")], [InlineKeyboardButton(text=f"{nn}", user_id=f"{dev}")]]
-  await client.send_photo(message.chat.id, photo=photo, caption=""
+  await client.send_photo(message.chat.id, photo=photo, caption=".", reply_to_message_id=message.id, reply_markup=InlineKeyboardMarkup(button))
   
 
 ############//((/start))//############
