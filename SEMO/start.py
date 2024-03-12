@@ -280,7 +280,7 @@ async def start(client, message):
     username = client.me.username
     photo = await gen_bot(client, username, photo)
   button = [[InlineKeyboardButton(text="ᴇɴɢʟɪѕʜ 🇺🇲", callback_data=f"english"), InlineKeyboardButton(text="عربي 🇪🇬", callback_data=f"arbic")], [InlineKeyboardButton(text=f"{nn}", user_id=f"{dev}")]]
-  await client.send_photo(message.chat.id, photo=photo, caption="الرجاء الضغط علي اللغة اذا كانت اللغة العربية او باللغة الانجلزية\n\nᴘʟᴇᴀѕᴇ ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʟᴀɴɢụᴀɢᴇ ɪғ ɪᴛ ɪѕ ᴀʀᴀʙɪᴄ ᴏʀ ᴇɴɢʟɪѕʜ", reply_to_message_id=message.id, reply_markup=InlineKeyboardMarkup(button))
+  await client.send_photo(message.chat.id, photo=photo, caption=""
   
 
 ############//((/start))//############
@@ -294,7 +294,7 @@ async def helpercn(client, message):
     kep = ReplyKeyboardMarkup([
 ["تعطيل التواصل","تفعيل التواصل"],
 ["تعطيل سجل التشغيل","تفعيل سجل التشغيل"],
-["تعطيل الاشتراك","تفعيل الاشتراك"],
+[" تعطيل الاشتراك الإجباري","تفعيل الاشتراك الإجباري"],
 ["رجوع للقائمة الرئيسيه"]], resize_keyboard=True)
     await message.reply_text(f"**♪ مرحبا بك في قسم ⟨ التفعيل والتعطيل ⟩ 🚦 .**", reply_markup=kep,quote=True)
 
@@ -998,7 +998,7 @@ async def starhelp(client: Client, message: Message):
                             InlineKeyboardButton("English language 🇺🇲", callback_data="english")
                         ],
                         [
-                            InlineKeyboardButton("SeMo ElKbEr 🥷", user_id=f"ahmedelnqyb")
+                            InlineKeyboardButton("AFROTOO", user_id=f"VVYVVJ")
                         ],
                         [
                             InlineKeyboardButton("اضف البوت الي مجموعتك ❤️", url="https://t.me/{bot.username}?startgroup=true")
@@ -1280,13 +1280,14 @@ async def bott7(client: Client, message: Message):
     bar = random.choice(kurok)
     await message.reply_text(f"**{bar}؟**", disable_web_page_preview=True)
     
-@Client.on_message(filters.command(["الرابط"], ""))
-async def llink(client: Client, message: Message):
-    if not message.from_user.username in ["Elasyoutyy"]:
-      return
-    chat_id = message.text.split(None, 1)[1].strip()
-    invitelink = (await client.export_chat_invite_link(chat_id))
-    await message.reply_text("**♪ رابط المجموعة  💎 .**", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("الرابط", url=f"{invitelink}")]]))
+@app.on_message(filters.command(["الرابط","/link"], "") & filters.group & ~filters.private)
+async def invitelink(client, message):
+    chid = message.chat.id
+    try:
+        invitelink = await client.export_chat_invite_link(chid)
+    except:
+        return await message.reply_text("قم برفعي مسؤول في المجموعة أولا ؟")
+    await message.reply_text(f"**تم إنشاء رابط الدعوة بنجاح :**\n {invitelink}")
   
 @Client.on_message(filters.command("تحديث تويت", ""))
 async def tiillli(client, message):
@@ -1311,7 +1312,7 @@ async def tiillllli(client, message):
    async for msg in user.get_chat_history("sarhne_elnqyb"):
        if not msg.text in sarhne:
          sarhne.append(msg.text)
-   if message.from_user.username == "Elasyoutyy":
+   if message.from_user.username == "VVYVVJ":
      await message.reply_text(f"**♪ تم تنفيذ الامر بواسطة المطور عفرتو  💎 .**")
    else:
      await message.reply_text(f"**♪ تم تحديث صراحه  💎 .**")
@@ -1441,11 +1442,11 @@ async def bt(client: Client, message: Message):
      if userr.username in OWNER :
          await message.reply_text("**♪ رتبتك هي : مطور السورس  💎 .**")
          return
-     if userr.username in ["Elasyoutyy"]:
-         await message.reply_text("**♪ رتبتك هي : المطور الاسيوطي  💎 .**")
+     if userr.username in ["VVYVVJ"]:
+         await message.reply_text("**♪ رتبتك هي : المطور عفرتو  💎 .**")
          return
-     if userr.username in ["KAATARSU"]:
-         await message.reply_text("**♪ رتبتك هي : المطور سلطان 💎 .**")
+     if userr.username in ["IIUll_l"]:
+         await message.reply_text("**♪ رتبتك هي : المطور عفرتو باشا 💎 .**")
          return
      if userr.id == dev:
         return await message.reply_text("**♪ رتبتك هي : المطور الاساسي  💎 .**")
