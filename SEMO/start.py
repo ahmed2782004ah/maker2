@@ -1589,52 +1589,21 @@ async def good_bye(client: Client, message):
 	chatid= message.chat.id
 	await client.send_message(text=f"كنت راجل محترم يا  {message.from_user.mention} ",chat_id=chatid)
 
-iddof = []
-@app.on_message(filters.command(["قفل جمالي","تعطيل جمالي"], ""))& filters.group)
-async def lllock(client, message):
-   get = await app.get_chat_member(message.chat.id, message.from_user.id)
-   if get.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR]:
-      if message.chat.id in iddof:
-        return await message.reply_text("جمالي معطل من قبل✅")
-      iddof.append(message.chat.id)
-      return await message.reply_text(" تم تعطيل جمالي بنجاح✅🔒")
-   else:
-      return await message.reply_text("لازم تكون ادمن يشخه علشان اسمع كلامك")
-
-@app.on_message(filters.command(["فتح جمالي","تفعيل جمالي"], ""))& filters.group)
-async def idljjopen(client, message):
-   get = await app.get_chat_member(message.chat.id, message.from_user.id)
-   if get.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR]:
-      if not message.chat.id in iddof:
-        return await message.reply_text("جمالي مفعل من قبل✅")
-      iddof.remove(message.chat.id)
-      return await message.reply_text("تم فتح جمالي بنجاح ✅🔓")
-   else:
-      return await message.reply_text("لازم تكون ادمن يشخه علشان اسمع كلامك")
-
-
-
-
-@app.on_message(filters.command(["جمالي"], ""))
-async def idjjdd(client, message):
-    if message.chat.id in iddof:
-      return
-    usr = await client.get_chat(message.from_user.id)
-    name = usr.first_name
-    i = ["0","10", "15","20", "25","30","35", "40","45", "50","55", "60"," 66", "70","77", "80","85", "90","99", "100","1000" ]
-    ik = random.choice(i)
-    photo = await app.download_media(usr.photo.big_file_id)
-    await message.reply_photo(photo,       caption=f"نسبه جمالك يا مز انت \n│ \n└ʙʏ: {ik} %😂❤️", 
-    reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        name, url=f"https://t.me/{message.from_user.username}")
-                ],
-            ]
-        ),
-    )
-       
-
-
-	
+@app.on_message(filters.command(["المالك", "صاحب الخرابه", "المنشي"], ""))
+async def gak_owne(client: Client, message: Message):
+      if len(message.command) >= 2:
+         return 
+      else:
+            chat_id = message.chat.id
+            f = "administrators"
+            async for member in client.get_chat_members(chat_id, filter=enums.ChatMembersFilter.f):    
+               if member.status == "creator":
+                 id = member.user.id
+                 key = InlineKeyboardMarkup([[InlineKeyboardButton(member.user.first_name, user_id=id)]])
+                 m = await client.get_chat(id)
+                 if m.photo:
+                       photo = await app.download_media(m.photo.big_file_id)
+                       return await message.reply_photo(photo, caption=f"🧞‍♂️ ¦𝙺𝙸𝙽𝙶 :{m.first_name}\n🎯 ¦𝚄𝚂𝙴𝚁 :@{m.username}\n🎃 ¦𝙸𝙳 :`{m.id}`\n💌 ¦𝙱𝙸𝙾 :{m.bio}\n✨ ¦𝙲𝙷𝙰𝚃: {message.chat.title}\n♻️ ¦𝙸𝙳.𝙲𝙷𝙰𝚃 :`{message.chat.id}`",reply_markup=key)
+                 else:
+                    return await message.reply("• " + member.user.mention)
+                    
