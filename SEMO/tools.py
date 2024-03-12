@@ -43,7 +43,7 @@ async def analysis(client: Client, message: Message):
    user = len(await get_served_users(client))
    return await message.reply_text(f"**✅ احصائيات البوت**\n**⚡ المجموعات {chats} مجموعة  **\n**⚡ المستخدمين {user} مستخدم**")
 
-@Client.on_message(filters.command(["• المجموعات •"], ""))
+@Client.on_message(filters.command([" المجموعات "], ""))
 async def chats_func(client: Client, message: Message):
  bot_username = client.me.username
  dev = await get_dev(bot_username)
@@ -84,7 +84,7 @@ async def chats_func(client: Client, message: Message):
 
 
 
-@Client.on_message(filters.command(["• المستخدمين •"], ""))
+@Client.on_message(filters.command([" المستخدمين "], ""))
 async def users_func(client: Client, message: Message):
  bot_username = client.me.username
  dev = await get_dev(bot_username)
@@ -123,7 +123,7 @@ async def users_func(client: Client, message: Message):
          await message.reply_text(link)
       return await m.delete()
 
-@Client.on_message(filters.command("• المكالمات النشطه •", ""))
+@Client.on_message(filters.command(" المكالمات النشطه ", ""))
 async def geetmeactive(client, message):
   bot_username = client.me.username
   dev = await get_dev(bot_username)
@@ -152,35 +152,35 @@ async def geetmeactive(client, message):
 
 
 
-@Client.on_message(filters.command(["• قسم الإذاعة •", "• رجوع •"], ""))
+@Client.on_message(filters.command(["• قسم الإذاعة ", "• رجوع "], ""))
 async def cast(client: Client, message):
    bot_username = client.me.username
    dev = await get_dev(bot_username)
    if message.chat.id == dev or message.chat.username in OWNER:
-    kep = ReplyKeyboardMarkup([["• اذاعه عام •"], ["• اذاعه للمجموعات •", "• اذاعه للمستخدمين •"], ["• توجيه عام •"], ["• توجيه للمجموعات •", "• توجيه للمستخدمين •"], ["• رجوع للقائمة الرئيسيه •"]], resize_keyboard=True)
+    kep = ReplyKeyboardMarkup([[" اذاعه عام "], [" اذاعه للمجموعات ", " اذاعه للمستخدمين "], [" توجيه عام "], [" توجيه للمجموعات ", " توجيه للمستخدمين "], [" رجوع للقائمة الرئيسيه "]], resize_keyboard=True)
     await message.reply_text("**أهلا بك عزيزي المطور **\n**هنا قسم الاذاعه تحكم بالازار**", reply_markup=kep)
 
 
-@Client.on_message(filters.command(["• اذاعه عام •", "• اذاعه للمجموعات •", "• اذاعه للمستخدمين •", "• توجيه عام •", "• توجيه للمستخدمين •", "• توجيه للمجموعات •"], ""))
+@Client.on_message(filters.command([" اذاعه عام ", " اذاعه للمجموعات ", " اذاعه للمستخدمين ", " توجيه عام ", " توجيه للمستخدمين ", " توجيه للمجموعات "], ""))
 async def cast1(client: Client, message):
    command = message.command[0]
    bot_username = client.me.username
    dev = await get_dev(bot_username)
    if message.chat.id == dev or message.chat.username in OWNER:
-    if command == "• اذاعه عام •":
-     kep = ReplyKeyboardMarkup([["• اذاعه عام بالبوت •"], ["• اذاعه عام بالمساعد •"], ["• رجوع •"]], resize_keyboard=True)
+    if command == " اذاعه عام ":
+     kep = ReplyKeyboardMarkup([["• اذاعه عام بالبوت •"], [" اذاعه عام بالمساعد "], ["• رجوع •"]], resize_keyboard=True)
      await message.reply_text("**أهلا بك عزيزي المطور **\n**هنا قسم الاذاعه تحكم بالازار**", reply_markup=kep)
-    elif command == "• اذاعه للمجموعات •":
-     kep = ReplyKeyboardMarkup([["• اذاعه للمجموعات بالبوت •"], ["• اذاعه للمجموعات بالمساعد •"], ["• رجوع •"]], resize_keyboard=True)
+    elif command == " اذاعه للمجموعات ":
+     kep = ReplyKeyboardMarkup([[" اذاعه للمجموعات بالبوت "], [" اذاعه للمجموعات بالمساعد "], ["• رجوع •"]], resize_keyboard=True)
      await message.reply_text("**أهلا بك عزيزي المطور **\n**هنا قسم الاذاعه تحكم بالازار**", reply_markup=kep)
     elif command == "• اذاعه للمستخدمين •":
-     kep = ReplyKeyboardMarkup([["• اذاعه للمستخدمين بالبوت •"], ["• اذاعه للمستخدمين بالمساعد •"], ["• رجوع •"]], resize_keyboard=True)
+     kep = ReplyKeyboardMarkup([[" اذاعه للمستخدمين بالبوت "], [" اذاعه للمستخدمين بالمساعد "], ["• رجوع •"]], resize_keyboard=True)
      await message.reply_text("**أهلا بك عزيزي المطور **\n**هنا قسم الاذاعه تحكم بالازار**", reply_markup=kep)
     elif command == "• توجيه عام •":
-     kep = ReplyKeyboardMarkup([["• توجيه عام بالبوت •"], ["• رجوع •"]], resize_keyboard=True)
+     kep = ReplyKeyboardMarkup([[" توجيه عام بالبوت "], ["• رجوع •"]], resize_keyboard=True)
      await message.reply_text("**أهلا بك عزيزي المطور **\n**هنا قسم الاذاعه تحكم بالازار**", reply_markup=kep)
     elif command == "• توجيه للمستخدمين •":
-     kep = ReplyKeyboardMarkup([["• توجيه للمستخدمين بالبوت •"], ["• رجوع •"]], resize_keyboard=True)
+     kep = ReplyKeyboardMarkup([[" توجيه للمستخدمين بالبوت "], ["• رجوع •"]], resize_keyboard=True)
      await message.reply_text("**أهلا بك عزيزي المطور **\n**هنا قسم الاذاعه تحكم بالازار**", reply_markup=kep)
     else:
      kep = ReplyKeyboardMarkup([["• توجيه للمجموعات بالبوت •"], ["• رجوع •"]], resize_keyboard=True)
@@ -193,7 +193,7 @@ async def cast5(client: Client, message):
   bot_username = client.me.username
   dev = await get_dev(bot_username)
   if message.chat.id == dev or message.chat.username in OWNER:
-   kep = ReplyKeyboardMarkup([["• الغاء •"], ["• رجوع •"], ["• رجوع للقائمة الرئيسيه •"]], resize_keyboard=True)
+   kep = ReplyKeyboardMarkup([["• الغاء •"], ["• رجوع •"], [" رجوع للقائمة الرئيسيه "]], resize_keyboard=True)
    ask = await client.ask(message.chat.id, "قم بإرسال الاذاعه الخاصه بك", reply_markup=kep)
    x = ask.id
    y = message.chat.id
@@ -481,7 +481,7 @@ async def cast5(client: Client, message):
 # قسم التحكم ف المساعد
 
 
-@Client.on_message(filters.command("• قسم التحكم في المساعد •", ""))
+@Client.on_message(filters.command(" قسم المساعد ", ""))
 async def helpercn(client, message):
    bot_username = client.me.username
    dev = await get_dev(bot_username)
