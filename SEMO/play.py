@@ -54,7 +54,7 @@ async def join_assistant(client, chat_id, message_id, userbot, file_path):
             except ChatAdminRequired:
                 await client.send_message(chat_id, f"**قم بترقية البوت مشرف .⚡**", reply_to_message_id=message_id)
             if get.status == ChatMemberStatus.BANNED:
-                await client.send_message(chat_id, f"**قم بالغاء الحظر عن الحساب المساعد لتفعيل البوت**.\n\n @{user.username} : **الحساب المساعد **⚡.\n** قم بتنظيف قايمه المستدخمين تمت ازالتهم ⚡.**\n\n** @T_S_T1 : او تواصل مع المطور من هنا ⚡.**", reply_to_message_id=message_id)
+                await client.send_message(chat_id, f"**قم بالغاء الحظر عن الحساب المساعد لتفعيل البوت**.\n\n @{user.username} : **الحساب المساعد **⚡.\n** قم بتنظيف قايمه المستدخمين تمت ازالتهم ⚡.**\n\n** @VVYVVJ : او تواصل مع المطور من هنا ⚡.**", reply_to_message_id=message_id)
             else:
               join = True
         except UserNotParticipant:
@@ -229,7 +229,7 @@ async def aii(client: Client, message):
     await rep.delete()
     gr = await get_group(bot_username)
     ch = await get_channel(bot_username)
-    button = [[InlineKeyboardButton(text="END", callback_data=f"stop"), InlineKeyboardButton(text="RESUME", callback_data=f"resume"), InlineKeyboardButton(text="PAUSE", callback_data=f"pause")], [InlineKeyboardButton(text="𝗖𝗵𝗮𝗻𝗻𝗲𝗹 ⚡", url=f"{ch}"), InlineKeyboardButton(text="𝗚𝗿𝗼𝘂𝗽 ⚡", url=f"{gr}")], [InlineKeyboardButton(text=f"{OWNER_NAME}", url="https://t.me/{OWNER[0]}")], [InlineKeyboardButton(text="🔻اضف البوت الي مجموعتك او قناتك🔺", url=f"https://t.me/{bot_username}?startgroup=True")]]
+    button = [[InlineKeyboardButton(text="𝚂𝚃𝙾𝙿", callback_data=f"stop"), InlineKeyboardButton(text="𝚁𝙴𝚂𝚞𝙼𝙴", callback_data=f"RESUME"), InlineKeyboardButton(text="𝙿𝙰𝚞𝚂𝙴", callback_data=f"pause")], [InlineKeyboardButton(text="𝙲𝙷𝙰𝙽𝙽𝙴𝙻", url=f"{ch}"), InlineKeyboardButton(text="𝙶𝚁𝙾𝚄𝙿", url=f"{gr}")], [InlineKeyboardButton(text=f"{OWNER_NAME}", url="https://t.me/{OWNER[0]}")], [InlineKeyboardButton(text="🔻اضف البوت الي مجموعتك او قناتك🔺", url=f"https://t.me/{bot_username}?startgroup=True")]]
     await message.reply_photo(photo=photo, caption=f"**Started Stream Random **\n\n**Song Name : {title}**\n**Duration Time : {duration}**\n**Requests By : {req}**", reply_markup=InlineKeyboardMarkup(button))
     await logs(bot_username, client, message)
     await asyncio.sleep(4)
