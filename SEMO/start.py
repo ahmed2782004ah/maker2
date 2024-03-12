@@ -1590,10 +1590,10 @@ async def good_bye(client: Client, message):
 	await client.send_message(text=f"كنت راجل محترم يا  {message.from_user.mention} ",chat_id=chatid)
 
 iddof = []
-@app.on_message(filters.command(["قفل جمالي","تعطيل جمالي"], ""))
+@app.on_message(filters.command(["قفل جمالي","تعطيل جمالي"], ""))& filters.group)
 async def lllock(client, message):
    get = await app.get_chat_member(message.chat.id, message.from_user.id)
-   if get.status in ["creator", "administrator"]:
+   if get.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR]:
       if message.chat.id in iddof:
         return await message.reply_text("جمالي معطل من قبل✅")
       iddof.append(message.chat.id)
@@ -1601,10 +1601,10 @@ async def lllock(client, message):
    else:
       return await message.reply_text("لازم تكون ادمن يشخه علشان اسمع كلامك")
 
-@app.on_message(filters.command(["فتح جمالي","تفعيل جمالي"], ""))
+@app.on_message(filters.command(["فتح جمالي","تفعيل جمالي"], ""))& filters.group)
 async def idljjopen(client, message):
    get = await app.get_chat_member(message.chat.id, message.from_user.id)
-   if get.status in ["creator", "administrator"]:
+   if get.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR]:
       if not message.chat.id in iddof:
         return await message.reply_text("جمالي مفعل من قبل✅")
       iddof.remove(message.chat.id)
