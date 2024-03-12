@@ -152,7 +152,7 @@ async def geetmeactive(client, message):
 
 
 
-@Client.on_message(filters.command(["• قسم الإذاعة •", "• رجوع •"], ""))
+@Client.on_message(filters.command(["• قسم الاذاعه ", "• رجوع "], ""))
 async def cast(client: Client, message):
    bot_username = client.me.username
    dev = await get_dev(bot_username)
@@ -491,7 +491,7 @@ async def helpercn(client, message):
    b = await client.get_chat(me.id)
    b = b.bio if b.bio else "لا يوجد بايو"
    if message.chat.id == dev or message.chat.username in OWNER:
-    kep = ReplyKeyboardMarkup([["• فحص المساعد •"], ["• تغير الاسم الاول •", "• تغير الاسم التاني •"], ["• تغير البايو •"], ["• تغير اسم المستخدم •"], ["• اضافه صوره •", "• ازالة الصور •"], ["• دعوه المساعد الي الانضمام •"], ["• رجوع للقائمة الرئيسيه •"]], resize_keyboard=True)
+    kep = ReplyKeyboardMarkup([["• فحص المساعد •"], ["• تغير الاسم الاول •", "• تغير الاسم التاني •"], ["• تغير البايو •"], ["• تغير اسم المستخدم •"], ["• اضافه صوره •", "• ازالة الصور •"], ["• دعوه المساعد الي الانضمام •"], [" رجوع للقائمة الرئيسيه "]], resize_keyboard=True)
     await message.reply_text(f"**أهلا بك عزيزي المطور **\n**هنا قسم الحساب المساعد**\n**{me.mention}**\n**{i}**\n**{b}**", reply_markup=kep)
    
 
