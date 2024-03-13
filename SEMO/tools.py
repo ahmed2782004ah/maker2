@@ -193,7 +193,7 @@ async def cast5(client: Client, message):
   bot_username = client.me.username
   dev = await get_dev(bot_username)
   if message.chat.id == dev or message.chat.username in OWNER:
-   kep = ReplyKeyboardMarkup([["• الغاء •"], ["• رجوع •"], ["• رجوع للقائمة الرئيسيه •"]], resize_keyboard=True)
+   kep = ReplyKeyboardMarkup([["• الغاء •"], ["• رجوع •"], [" رجوع للقائمة الرئيسيه "]], resize_keyboard=True)
    ask = await client.ask(message.chat.id, "قم بإرسال الاذاعه الخاصه بك", reply_markup=kep)
    x = ask.id
    y = message.chat.id
