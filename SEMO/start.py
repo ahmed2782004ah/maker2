@@ -18,7 +18,7 @@ from PIL import (Image, ImageDraw, ImageEnhance, ImageFilter,
                  ImageFont, ImageOps)
 from youtubesearchpython.__future__ import VideosSearch
 
-ahmed = "https://telegra.ph/file/0a2e4b9e06d957bf4c1ed.jpg"
+ahmed = "https://telegra.ph/file/b1fa92b49f6320da49a46.jpg"
 
 
 def changeImageSize(maxWidth, maxHeight, image):
@@ -192,7 +192,7 @@ async def welcome(client: Client, message):
          await client.set_administrator_title(chat_id, user_id, "عفرتو")
       except:
         pass
-      return await message.reply_text(f"**♪ انضم المطو عفرتو للشات  💎 .\n♪ مرحبا بك : @VVYVVJ  💎 .**")
+      return await message.reply_text(f"**♪ انضم المطور عفرتو للشات  💎 .\n♪ مرحبا بك : @VVYVVJ  💎 .**")
     dev = await get_dev(bot_username)
     if message.new_chat_members[0].id == dev:
       try:
@@ -1589,21 +1589,55 @@ async def good_bye(client: Client, message):
 	chatid= message.chat.id
 	await client.send_message(text=f"كنت راجل محترم يا  {message.from_user.mention} ",chat_id=chatid)
 
-@app.on_message(filters.command(["المالك", "صاحب الخرابه", "المنشي"], ""))
-async def gak_owne(client: Client, message: Message):
-      if len(message.command) >= 2:
-         return 
-      else:
-            chat_id = message.chat.id
-            f = "administrators"
-            async for member in client.get_chat_members(chat_id, filter=enums.ChatMembersFilter.f):    
-               if member.status == "creator":
-                 id = member.user.id
-                 key = InlineKeyboardMarkup([[InlineKeyboardButton(member.user.first_name, user_id=id)]])
-                 m = await client.get_chat(id)
-                 if m.photo:
-                       photo = await app.download_media(m.photo.big_file_id)
-                       return await message.reply_photo(photo, caption=f"🧞‍♂️ ¦𝙺𝙸𝙽𝙶 :{m.first_name}\n🎯 ¦𝚄𝚂𝙴𝚁 :@{m.username}\n🎃 ¦𝙸𝙳 :`{m.id}`\n💌 ¦𝙱𝙸𝙾 :{m.bio}\n✨ ¦𝙲𝙷𝙰𝚃: {message.chat.title}\n♻️ ¦𝙸𝙳.𝙲𝙷𝙰𝚃 :`{message.chat.id}`",reply_markup=key)
-                 else:
-                    return await message.reply("• " + member.user.mention)
-                    
+@app.on_message(filters.video_chat_started)
+async def brah(client, message):
+       await message.reply(" بدأت المحادثة الصوتية 👤")
+@app.on_message(filters.video_chat_ended)
+async def brah2(client, message):
+    da = message.video_chat_ended.duration
+    ma = divmod(da, 60)
+    ho = divmod(ma[0], 60)
+    day = divmod(ho[0], 24)
+    if da < 60:
+       await message.reply(f"تم انهاء مكالمة الفيديو مدتها {da} ثواني وصكرها ")        
+    elif 60 < da < 3600:
+        if 1 <= ma[0] < 2:
+            await message.reply(f" تم انهاء مكالمة الفيديو مدتها دقيقه")
+        elif 2 <= ma[0] < 3:
+            await message.reply(f" تم انهاء مكالمة الفيديو مدتها دقيقتين ")
+        elif 3 <= ma[0] < 11:
+            await message.reply(f"تم انهاء مكالمة الفيديو مدتها {ma[0]} دقايق ")  
+        else:
+            await message.reply(f"تم إنهاء مكالمة الفيديو مدتها {ma[0]} دقيقه")
+    elif 3600 < da < 86400:
+        if 1 <= ho[0] < 2:
+            await message.reply(f"تم انهاء مكالمة الفيديو مدتها ساعه ")
+        elif 2 <= ho[0] < 3:
+            await message.reply(f"تم انهاء مكالمة الفيديو مدتها ساعتين ")
+        elif 3 <= ho[0] < 11:
+            await message.reply(f"تم انهاء مكالمة الفيديو مدتها {ho[0]} ساعات ")  
+        else:
+            await message.reply(f"تم إنهاء مكالمة الفيديو مدتها {ho[0]} ساعة ")
+    else:
+        if 1 <= day[0] < 2:
+            await message.reply(f"تم انهاء مكالمة الفيديو مدتها يوم ")
+        elif 2 <= day[0] < 3:
+            await message.reply(f" تم انهاء مكالمة الفيديو مدتها يومين ")
+        elif 3 <= day[0] < 11:
+            await message.reply(f" تم انهاء مكالمة الفيديو مدتها {day[0]} ايام ")  
+        else:
+            await message.reply(f" تم إنهاء مكالمة الفيديو مدتها {day[0]} يوم")
+@app.on_message(filters.video_chat_members_invited)
+async def fuckoff(client, message):
+           text = f"• قــــام ← {message.from_user.mention}"
+           x = 0
+           for user in message.video_chat_members_invited.users:
+             try:
+               text += f"\n• بــدعـــوة ←[{user.first_name}](tg://user?id={user.id})"
+               x += 1
+             except Exception:
+               pass
+           try:
+             await message.reply(f"{text}")
+           except:
+             pass  
