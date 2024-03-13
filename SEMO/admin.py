@@ -159,7 +159,7 @@ async def admin_risght(client: Client, message):
        requester = userx.mention       
        gr = await get_group(bot_username)
        ch = await get_channel(bot_username)
-       button = [[InlineKeyboardButton(text="「𝚂𝚃𝙾𝙿」", callback_data=f"stop"), InlineKeyboardButton(text="「𝚁𝙴𝚂𝚞𝙼𝙴」", callback_data=f"RESUME"), InlineKeyboardButton(text="「𝙿𝙰𝚞𝚂𝙴」", callback_data=f"pause")], [InlineKeyboardButton(text="「𝙲𝙷𝙰𝙽𝙽𝙴𝙻」", url=f"{ch}"), InlineKeyboardButton(text="「𝙶𝚁𝙾𝚞𝙿」", url=f"{gr}")], [InlineKeyboardButton(text=f"{OWNER_NAME}", url="https://t.me/VVYVVJ")], [InlineKeyboardButton(text="اضف البوت الي مجموعتك او قناتك ⚡", url=f"https://t.me/{bot_username}?startgroup=True")]]
+       button = [[InlineKeyboardButton(text="𝚂𝚃𝙾𝙿", callback_data=f"stop"), InlineKeyboardButton(text="𝚁𝙴𝚂𝚞𝙼𝙴", callback_data=f"RESUME"), InlineKeyboardButton(text="𝙿𝙰𝚞𝚂𝙴", callback_data=f"pause")], [InlineKeyboardButton(text="𝙲𝙷𝙰𝙽𝙽𝙴𝙻", url=f"{ch}"), InlineKeyboardButton(text="𝙶𝚁𝙾𝚞𝙿", url=f"{gr}")], [InlineKeyboardButton(text=f"{OWNER_NAME}", url="https://t.me/VVYVVJ")], [InlineKeyboardButton(text="اضف البوت الي مجموعتك او قناتك ⚡", url=f"https://t.me/{bot_username}?startgroup=True")]]
        await message.reply_photo(photo=img, caption=f"**Skipped Streaming **\n\n**العنوان** : {title}\n**المدة** {dur}\n**طلب بواسطة** : {requester}", reply_markup=InlineKeyboardMarkup(button))
        try:
            os.remove(file_path)
