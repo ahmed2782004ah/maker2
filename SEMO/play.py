@@ -54,7 +54,7 @@ async def join_assistant(client, chat_id, message_id, userbot, file_path):
             except ChatAdminRequired:
                 await client.send_message(chat_id, f"**قم بترقية البوت مشرف .⚡**", reply_to_message_id=message_id)
             if get.status == ChatMemberStatus.BANNED:
-                await client.send_message(chat_id, f"**قم بالغاء الحظر عن الحساب المساعد لتفعيل البوت**.\n\n @{user.username} : **الحساب المساعد **⚡.\n** قم بتنظيف قايمه المستدخمين تمت ازالتهم ⚡.**\n\n** @T_S_T1 : او تواصل مع المطور من هنا ⚡.**", reply_to_message_id=message_id)
+                await client.send_message(chat_id, f"**قم بالغاء الحظر عن الحساب المساعد لتفعيل البوت**.\n\n @{user.username} : **الحساب المساعد **⚡.\n** قم بتنظيف قايمه المستدخمين تمت ازالتهم ⚡.**\n\n** @VVYVVJ : او تواصل مع المطور من هنا ⚡.**", reply_to_message_id=message_id)
             else:
               join = True
         except UserNotParticipant:
@@ -248,7 +248,7 @@ async def play(client: Client, message):
   message_id = message.id 
   gr = await get_group(bot_username)
   ch = await get_channel(bot_username)
-  button = [[InlineKeyboardButton(text="𝐒𝐓𝐎𝐏 ‌", callback_data=f"stop"), InlineKeyboardButton(text="𝐑𝐄𝐒𝐔𝐌𝐄 ‌", callback_data=f"resume"), InlineKeyboardButton(text="𝐏𝐀𝐔𝐒𝐄 ", callback_data=f"pause")], [InlineKeyboardButton(text="♪. 𝑪𝒉𝒂𝒏𝒆𝒆𝒍", url=f"{ch}"), InlineKeyboardButton(text="𝑮𝒓𝒐𝒖𝒑 ♪.", url=f"{gr}")], [InlineKeyboardButton(text=f"{OWNER_NAME}", url="https://t.me/Elasyoutyy")], [InlineKeyboardButton(text="اضف البوت الي مجموعتك او قناتك ⚡", url=f"https://t.me/{bot_username}?startgroup=True")]]
+  button = [[InlineKeyboardButton(text="𝐒𝐓𝐎𝐏 ‌", callback_data=f"stop"), InlineKeyboardButton(text="𝐑𝐄𝐒𝐔𝐌𝐄 ‌", callback_data=f"resume"), InlineKeyboardButton(text="𝐏𝐀𝐔𝐒𝐄 ", callback_data=f"pause")], [InlineKeyboardButton(text="♪. 𝑪𝒉𝒂𝒏𝒆𝒆𝒍", url=f"{ch}"), InlineKeyboardButton(text="𝑮𝒓𝒐𝒖𝒑 ♪.", url=f"{gr}")], [InlineKeyboardButton(text=f"{OWNER_NAME}", url="https://t.me/VVYVVJ")], [InlineKeyboardButton(text="اضف البوت الي مجموعتك او قناتك ⚡", url=f"https://t.me/{bot_username}?startgroup=True")]]
   if message.chat.type == ChatType.PRIVATE:
        return await message.reply_text("**♪ لا يمكنك التشغيل هنا للأسف 💎 .\n♪ قم بإضافة البوت اللي مجموعتك للتشغيل 💎 .**", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("ضف البوت الي مجموعتك او قناتك ⚡", url=f"https://t.me/{bot_username}?startgroup=True")]]))
   if message.sender_chat:
