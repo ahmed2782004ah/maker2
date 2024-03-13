@@ -229,8 +229,8 @@ async def aii(client: Client, message):
     await rep.delete()
     gr = await get_group(bot_username)
     ch = await get_channel(bot_username)
-    button = [[InlineKeyboardButton(text="END", callback_data=f"stop"), InlineKeyboardButton(text="RESUME", callback_data=f"resume"), InlineKeyboardButton(text="PAUSE", callback_data=f"pause")], [InlineKeyboardButton(text="𝗖𝗵𝗮𝗻𝗻𝗲𝗹 ⚡", url=f"{ch}"), InlineKeyboardButton(text="𝗚𝗿𝗼𝘂𝗽 ⚡", url=f"{gr}")], [InlineKeyboardButton(text=f"{OWNER_NAME}", url="https://t.me/{OWNER[0]}")], [InlineKeyboardButton(text="🔻اضف البوت الي مجموعتك او قناتك🔺", url=f"https://t.me/{bot_username}?startgroup=True")]]
-    await message.reply_photo(photo=photo, caption=f"**Started Stream Random **\n\n**Song Name : {title}**\n**Duration Time : {duration}**\n**Requests By : {req}**", reply_markup=InlineKeyboardMarkup(button))
+    button = [[InlineKeyboardButton(text="「𝚂𝚃𝙾𝙿」", callback_data=f"stop"), InlineKeyboardButton(text="「𝚁𝙴𝚂𝚞𝙼𝙴」", callback_data=f"resume"), InlineKeyboardButton(text="「𝙿𝙰𝚞𝚂𝙴」", callback_data=f"pause")], [InlineKeyboardButton(text="「𝙲𝙷𝙰𝙽𝙽𝙴𝙻」", url=f"{ch}"), InlineKeyboardButton(text="「𝙶𝚁𝙾𝚞𝙿」", url=f"{gr}")], [InlineKeyboardButton(text=f"{OWNER_NAME}", url="https://t.me/{OWNER[0]}")], [InlineKeyboardButton(text="🔻اضف البوت الي مجموعتك او قناتك🔺", url=f"https://t.me/{bot_username}?startgroup=True")]]
+    await message.reply_photo(photo=photo, caption=f"**جاري بدء التشغيل العشوائي **\n\n**العنوان : {title}**\n**المدة : {duration}**\n**طلب بواسطة : {req}**", reply_markup=InlineKeyboardMarkup(button))
     await logs(bot_username, client, message)
     await asyncio.sleep(4)
     os.remove(file_path)
@@ -248,7 +248,7 @@ async def play(client: Client, message):
   message_id = message.id 
   gr = await get_group(bot_username)
   ch = await get_channel(bot_username)
-  button = [[InlineKeyboardButton(text="𝐒𝐓𝐎𝐏 ‌", callback_data=f"stop"), InlineKeyboardButton(text="𝐑𝐄𝐒𝐔𝐌𝐄 ‌", callback_data=f"resume"), InlineKeyboardButton(text="𝐏𝐀𝐔𝐒𝐄 ", callback_data=f"pause")], [InlineKeyboardButton(text="♪. 𝑪𝒉𝒂𝒏𝒆𝒆𝒍", url=f"{ch}"), InlineKeyboardButton(text="𝑮𝒓𝒐𝒖𝒑 ♪.", url=f"{gr}")], [InlineKeyboardButton(text=f"{OWNER_NAME}", url="https://t.me/VVYVVJ")], [InlineKeyboardButton(text="اضف البوت الي مجموعتك او قناتك ⚡", url=f"https://t.me/{bot_username}?startgroup=True")]]
+  button = [[InlineKeyboardButton(text="「𝚂𝚃𝙾𝙿」 ‌", callback_data=f"stop"), InlineKeyboardButton(text="「𝚁𝙴𝚂𝚞𝙼𝙴」 ‌", callback_data=f"resume"), InlineKeyboardButton(text="「𝙿𝙰𝚞𝚂𝙴」 ", callback_data=f"pause")], [InlineKeyboardButton(text="「𝙲𝙷𝙰𝙽𝙽𝙴𝙻」", url=f"{ch}"), InlineKeyboardButton(text="「𝙶𝚁𝙾𝚞𝙿」", url=f"{gr}")], [InlineKeyboardButton(text=f"{OWNER_NAME}", url="https://t.me/VVYVVJ")], [InlineKeyboardButton(text="اضف البوت الي مجموعتك او قناتك ⚡", url=f"https://t.me/{bot_username}?startgroup=True")]]
   if message.chat.type == ChatType.PRIVATE:
        return await message.reply_text("**♪ لا يمكنك التشغيل هنا للأسف 💎 .\n♪ قم بإضافة البوت اللي مجموعتك للتشغيل 💎 .**", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("ضف البوت الي مجموعتك او قناتك ⚡", url=f"https://t.me/{bot_username}?startgroup=True")]]))
   if message.sender_chat:
@@ -321,7 +321,7 @@ async def play(client: Client, message):
           ahmedphoto = ahmed.photo.big_file_id
           photo = await client.download_media(ahmedphoto)
          photo = await gen_thumb(videoid, photo)
-         await message.reply_photo(photo=photo, caption=f"**♪ Add Track To Playlist : {position} 🥁 .\n\n♪ Song Name : {title[:18]} 🎞️ .\n♪ Duration Time : {duration} ⌚ .\n♪ Request By : {requester} 👤 .**", reply_markup=InlineKeyboardMarkup(button))
+         await message.reply_photo(photo=photo, caption=f"** تمت اضافته الي قائمه التشغيل  : {position} \n\nالعنوان : {title[:18]} \nالمدة : {duration} \n طلب بواسطة : {requester} **", reply_markup=InlineKeyboardMarkup(button))
          await logs(bot_username, client, message)
      else:
          chat_id = message.chat.id
@@ -357,14 +357,14 @@ async def play(client: Client, message):
           ahmedphoto = ahmed.photo.big_file_id
           photo = await client.download_media(ahmedphoto)
          photo = await gen_thumb(videoid, photo)
-         await message.reply_photo(photo=photo, caption=f"**♪ Startling Playing Now 🥁 .\n\n♪ Song Name : {title[:18]} 🎞️ .\n♪ Duration Time : {duration} ⌚ .\n♪ Request By : {requester} 👤 .**", reply_markup=InlineKeyboardMarkup(button))
+         await message.reply_photo(photo=photo, caption=f"** جاري التشغيل الان \n\n♪ العنوان : {title[:18]} \n♪ المدة : {duration} \nطلب بواسطة : {requester} **", reply_markup=InlineKeyboardMarkup(button))
          await logs(bot_username, client, message)
      await rep.delete()
   else:
        if not message.reply_to_message.media:
          return
        rep = await message.reply_text("**♪ جاري تشغيل الملف انتظر قليلا 🚦 .**") 
-       photo = "Uploaded to https://telegra.ph/file/5052303e233d674acebd1.jpg"
+       photo = "Uploaded to https://telegra.ph/file/b1fa92b49f6320da49a46.jpg"
        if message.reply_to_message.video or message.reply_to_message.document:
            vid = True
        else:
@@ -390,7 +390,7 @@ async def play(client: Client, message):
          chatname = f"[{message.chat.title}](https://t.me/{message.chat.username})" if message.chat.username else f"{message.chat.title}"
          chatname = f"{message.author_signature}" if message.author_signature else chatname
          requester = chatname if SEMO.views else f"[{message.from_user.first_name}](tg://user?id={message.from_user.id})"
-         await message.reply_photo(photo=photo, caption=f"**♪ Add Track To Playlist : {position} \n\n♪ Song Name : {title} \n♪ Duration Time : {duration} \n♪ Request By : {requester} **", reply_markup=InlineKeyboardMarkup(button))
+         await message.reply_photo(photo=photo, caption=f"**تمت اضافته الي قائمة التشغيل : {position} \n\nالعنوان : {title} \n المدة : {duration} \nطلب بواسطة : {requester} **", reply_markup=InlineKeyboardMarkup(button))
          await logs(bot_username, client, message)
        else:
          chat_id = message.chat.id
@@ -407,7 +407,7 @@ async def play(client: Client, message):
          chatname = f"[{message.chat.title}](https://t.me/{message.chat.username})" if message.chat.username else f"{message.chat.title}"
          chatname = f"{message.author_signature}" if message.author_signature else chatname
          requester = chatname if SEMO.views else f"[{message.from_user.first_name}](tg://user?id={message.from_user.id})"
-         await message.reply_photo(photo=photo, caption=f"**♪ Startling Playing Now 🥁 .\n\n♪ Song Name : {title} 🎞️ .\n♪ Duration Time : {duration} ⌚ .\n♪ Request By : {requester} 👤 .**", reply_markup=InlineKeyboardMarkup(button))
+         await message.reply_photo(photo=photo, caption=f"**جاري التشغيل الان \n\nالعنوان : {title} \nالمدة : {duration} \nطلب بواسطة : {requester} **", reply_markup=InlineKeyboardMarkup(button))
          await logs(bot_username, client, message)
   try:
      os.remove(file_path)
