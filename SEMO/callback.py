@@ -67,7 +67,7 @@ Powered By [{OWNER_NAME}]""",
                     )
                 ],
                 [
-                    InlineKeyboardButton("Donate", url=f"https://t.me/Elasyoutyy")
+                    InlineKeyboardButton("Donate", url=f"https://t.me/VVYVVJ")
                 ],
                 [
                     InlineKeyboardButton("Commands", callback_data="cbcmds"),
