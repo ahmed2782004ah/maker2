@@ -229,7 +229,7 @@ async def aii(client: Client, message):
     await rep.delete()
     gr = await get_group(bot_username)
     ch = await get_channel(bot_username)
-    button = [[InlineKeyboardButton(text="「𝚂𝚃𝙾𝙿」", callback_data=f"stop"), InlineKeyboardButton(text="「𝚁𝙴𝚂𝚞𝙼𝙴」", callback_data=f"resume"), InlineKeyboardButton(text="「𝙿𝙰𝚞𝚂𝙴」", callback_data=f"pause")], [InlineKeyboardButton(text="「𝙲𝙷𝙰𝙽𝙽𝙴𝙻」", url=f"{ch}"), InlineKeyboardButton(text="「𝙶𝚁𝙾𝚞𝙿」", url=f"{gr}")], [InlineKeyboardButton(text=f"{OWNER_NAME}", url="https://t.me/{OWNER[0]}")], [InlineKeyboardButton(text="🔻اضف البوت الي مجموعتك او قناتك🔺", url=f"https://t.me/{bot_username}?startgroup=True")]]
+    button = [[InlineKeyboardButton(text="𝚂𝚃𝙾𝙿", callback_data=f"stop"), InlineKeyboardButton(text="𝚁𝙴𝚂𝚞𝙼𝙴", callback_data=f"resume"), InlineKeyboardButton(text="𝙿𝙰𝚞𝚂𝙴", callback_data=f"pause")], [InlineKeyboardButton(text="𝙲𝙷𝙰𝙽𝙽𝙴𝙻", url=f"{ch}"), InlineKeyboardButton(text="𝙶𝚁𝙾𝚞𝙿", url=f"{gr}")], [InlineKeyboardButton(text=f"{OWNER_NAME}", url="https://t.me/{OWNER[0]}")], [InlineKeyboardButton(text="🔻اضف البوت الي مجموعتك او قناتك🔺", url=f"https://t.me/{bot_username}?startgroup=True")]]
     await message.reply_photo(photo=photo, caption=f"**جاري بدء التشغيل العشوائي **\n\n**العنوان : {title}**\n**المدة : {duration}**\n**طلب بواسطة : {req}**", reply_markup=InlineKeyboardMarkup(button))
     await logs(bot_username, client, message)
     await asyncio.sleep(4)
@@ -248,7 +248,7 @@ async def play(client: Client, message):
   message_id = message.id 
   gr = await get_group(bot_username)
   ch = await get_channel(bot_username)
-  button = [[InlineKeyboardButton(text="「𝚂𝚃𝙾𝙿」 ‌", callback_data=f"stop"), InlineKeyboardButton(text="「𝚁𝙴𝚂𝚞𝙼𝙴」 ‌", callback_data=f"resume"), InlineKeyboardButton(text="「𝙿𝙰𝚞𝚂𝙴」 ", callback_data=f"pause")], [InlineKeyboardButton(text="「𝙲𝙷𝙰𝙽𝙽𝙴𝙻」", url=f"{ch}"), InlineKeyboardButton(text="「𝙶𝚁𝙾𝚞𝙿」", url=f"{gr}")], [InlineKeyboardButton(text=f"{OWNER_NAME}", url="https://t.me/VVYVVJ")], [InlineKeyboardButton(text="اضف البوت الي مجموعتك او قناتك ⚡", url=f"https://t.me/{bot_username}?startgroup=True")]]
+  button = [[InlineKeyboardButton(text="𝚂𝚃𝙾𝙿 ‌", callback_data=f"stop"), InlineKeyboardButton(text="𝚁𝙴𝚂𝚞𝙼𝙴 ‌", callback_data=f"resume"), InlineKeyboardButton(text="𝙿𝙰𝚞𝚂𝙴 ", callback_data=f"pause")], [InlineKeyboardButton(text="𝙲𝙷𝙰𝙽𝙽𝙴𝙻", url=f"{ch}"), InlineKeyboardButton(text=" 𝙶𝚁𝙾𝚞𝙿 ", url=f"{gr}")], [InlineKeyboardButton(text=f"{OWNER_NAME}", url="https://t.me/VVYVVJ")], [InlineKeyboardButton(text="اضف البوت الي مجموعتك او قناتك ⚡", url=f"https://t.me/{bot_username}?startgroup=True")]]
   if message.chat.type == ChatType.PRIVATE:
        return await message.reply_text("**♪ لا يمكنك التشغيل هنا للأسف 💎 .\n♪ قم بإضافة البوت اللي مجموعتك للتشغيل 💎 .**", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("ضف البوت الي مجموعتك او قناتك ⚡", url=f"https://t.me/{bot_username}?startgroup=True")]]))
   if message.sender_chat:
