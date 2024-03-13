@@ -1643,25 +1643,6 @@ async def fuckoff(client, message):
              pass  
 
 
-async def get_group_call(
-    client: Client, message: Message, err_msg: str = ""
-) -> Optional[InputGroupCall]:
-    assistant = await get_assistant(message.chat.id)
-    chat_peer = await assistant.resolve_peer(message.chat.id)
-    if isinstance(chat_peer, (InputPeerChannel, InputPeerChat)):
-        if isinstance(chat_peer, InputPeerChannel):
-            full_chat = (
-                await assistant.invoke(GetFullChannel(channel=chat_peer))
-            ).full_chat
-        elif isinstance(chat_peer, InputPeerChat):
-            full_chat = (
-                await assistant.invoke(GetFullChat(chat_id=chat_peer.chat_id))
-            ).full_chat
-        if full_chat is not None:
-            return full_chat.call
-    await app.send_message(f"**No group call Found** {err_msg}")
-    return False
-
 @app.on_message(filters.regex("^افتح الكول$"))
 async def start_group_call(c: Client, m: Message):
     chat_id = m.chat.id
